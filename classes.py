@@ -195,17 +195,3 @@ class Words:
                 num_two_gram = self.__content[name]['num_two_gram']
                 output[name] = num_two_gram
         return output
-
-
-if __name__ == '__main__':
-    # path = 'D:\\Projeto Engenheiro de Dados\\Desafio Cinnecta\\'
-    path = 'D:\\Projeto Engenheiro de Dados\\Cinnecta Final\\'
-    filename1 = 'texto1.txt'
-    file = path + filename1
-    words = Words()
-    words.add_files(file)
-    filename2 = 'texto2.txt'
-    file = path + filename2
-    words.add_files(file)
-    print(words.files)
-    print(words.content)
