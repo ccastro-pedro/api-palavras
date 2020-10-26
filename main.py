@@ -1,8 +1,10 @@
 import requests
+import os
 
 if __name__ == '__main__':
     BASE = 'http://127.0.0.1:5000/'
     while True:
+        #default_path = input('Digite o valor do diretório default: ')
         print('\n\n')
         print('Escolha uma opção: \n1) Enviar arquivo(s) \n2) Vocabulário formado pelas palavras isoladas'
               '\n3) Vocabulário formado pelos grupos de 2 palavras \n4) Os N vetores de palavras, '
@@ -14,8 +16,7 @@ if __name__ == '__main__':
         try:
             resp = int(userInput or 6)
             if resp == 1:
-                # default_path = 'D:\\Projeto Engenheiro de Dados\\Desafio Cinnecta\\'
-                default_path = 'C:\\Users\\Pedro Castro\\Desktop\\Eng Dados\\Cinnecta v2\\'
+                default_path = 'D:\Projeto Engenheiro de Dados\Cinnecta Final'
                 print("------------------------------------------")
                 path = str(input(
                     'Diretório onde se encontram o(s) arquivo(s) (ou aperte ENTER para o valor default): ') or default_path)
@@ -38,7 +39,7 @@ if __name__ == '__main__':
 
                 print("\nEnviando os arquivos para o banco de dados...\n")
                 for name in files:
-                    file = path + name.split('.')[0]
+                    file = os.path.join(path, name.split('.')[0])
                     if len(name.split('.')) > 1:
                         if name.split('.')[1] != 'txt':
                             print(f'O arquivo {name} não está no formato adequado!\n'
@@ -46,6 +47,7 @@ if __name__ == '__main__':
                         else:
                             r = requests.put(f'{BASE}/UploadFile/{file}')
                     else:
+                        print(f'{file}.txt')
                         r = requests.put(f'{BASE}/UploadFile/{file}.txt')
             elif resp == 2:
                 r = requests.get(BASE + 'UniqueVocab')
