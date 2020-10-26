@@ -10,5 +10,5 @@ Words.content = {'nome do arquivo 1': {'texto':[], 'Vetor N únicos': [], 'Vetor
                 'Vocabulario Único': [],
                 'Vocabulario TwoGram': []}
                 
- Para executar o programa, deve-se, primeiramente, inicializar o servidor do REST API. Isto é feito rodando o script 'server.py'. Então, basta executar o código 'main.py' e seguir as instruções que aparecem no terminal. 
+ Para executar o programa, deve-se, primeiramente, instalar todas as bibliotecas necessárias. Isto é feito executando o comando 'pip install -r requirements.txt'. Então, pode-se inicializar o servidor do REST API. Isto é feito rodando o script 'server.py'. Então, basta executar o código 'main.py' e seguir as instruções que aparecem no terminal. 
  
