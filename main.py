@@ -16,7 +16,8 @@ if __name__ == '__main__':
         try:
             resp = int(userInput or 6)
             if resp == 1:
-                default_path = 'D:\Projeto Engenheiro de Dados\Cinnecta Final'
+                default_path = os.getcwd()
+
                 print("------------------------------------------")
                 path = str(input(
                     'Diretório onde se encontram o(s) arquivo(s) (ou aperte ENTER para o valor default): ') or default_path)
