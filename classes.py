@@ -20,6 +20,10 @@ def add_element(d, key, value):
 
 
 class Words:
+    """
+    Classe Words com todos os atributos e métodos para o desafio do vetor de palavras. Toda a lógica para resolução
+    do problema está encapsulado dentro desta classe
+    """
     def __init__(self):
         """
         Construtor de um objeto da classe Words
@@ -140,22 +144,38 @@ class Words:
 
     @property
     def content(self):
+        """
+        :return: atributo content da classe Words
+        """
         return self.__content
 
     @property
     def files(self):
+        """
+        :return: atributo files da classe Words
+        """
         return self.__files
 
     @property
     def unique_vocab(self):
+        """
+        :return: vocabulário das palavras únicas de todos os textos
+        """
         return self.__content['unique']
 
     @property
     def two_gram_vocab(self):
+        """
+        :return: vocabulário dos grupos de 2 palavras de todos os textos
+        """
         return self.__content['two_gram']
 
     @property
     def num_unique(self):
+        """
+        :return: retorna um vetor, para cada texto, com o número de repetições de cada palavra comparando ao
+        vocabulário de palavras únicas
+        """
         output = {}
         for name in self.__content:
             if name != 'unique' and name != 'two_gram':
@@ -165,6 +185,10 @@ class Words:
 
     @property
     def num_two_gram(self):
+        """
+        :return: retorna um vetor, para cada texto, com o número de repetições de cada grupo de 2 palavras comparando ao
+        vocabulário two gram
+        """
         output = {}
         for name in self.__content:
             if name != 'unique' and name != 'two_gram':
@@ -175,7 +199,7 @@ class Words:
 
 if __name__ == '__main__':
     # path = 'D:\\Projeto Engenheiro de Dados\\Desafio Cinnecta\\'
-    path = 'C:\\Users\\Pedro Castro\\Desktop\\Eng Dados\\Desafio Cinnecta\\'
+    path = 'D:\\Projeto Engenheiro de Dados\\Cinnecta Final\\'
     filename1 = 'texto1.txt'
     file = path + filename1
     words = Words()
@@ -185,4 +209,3 @@ if __name__ == '__main__':
     words.add_files(file)
     print(words.files)
     print(words.content)
-
