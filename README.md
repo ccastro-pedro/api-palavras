@@ -1,4 +1,4 @@
-# Desafio Cinnecta: Vetor de Palavras
+# REST API para Vetor de Palavras
 
 Repositório com os arquivos para o desafio da Cinnecta
 
